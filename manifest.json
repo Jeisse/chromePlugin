@@ -1,0 +1,26 @@
+﻿{
+	"name": "Terra Channels Filter",
+	"version": "1.1",
+	"description": "Filtrar a lista de canais do V7 agora ficou fácil pra caramba!",
+	"manifest_version": 2,
+	"background": {
+		"scripts": ["back.js"]
+	},
+	"icons":{
+		"128":"icon_128.png"
+	},
+	"content_scripts": [
+    {
+      "matches": ["http://vgn-cms-mia.terra.com/vgn-ext-templating/sites/terra/atomo/util/*"],
+      "js": ["jquery.min.js", "background.js"]
+    }
+	],
+	"permissions": [
+		"tabs", "http://vgn-cms-mia.terra.com/vgn-ext-templating/sites/terra/atomo/util/*"
+	],
+	"page_action": {
+		"default_title": "Filtrar canais por palavra chave!",
+		"default_icon": "icon_19.png",
+		"default_popup": "popup.html"
+	}
+}
